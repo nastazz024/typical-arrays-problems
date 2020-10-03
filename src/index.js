@@ -1,49 +1,49 @@
-const max = (numbers) => {
-  let memory = [];
-  if (numbers && numbers.length !== 0) {
-      for (let i = 0; i < numbers.length; i++) {
-          if (memory.length === 0) {
-              memory = numbers[i]
-          }
-          if (numbers[i] > memory) {
-              memory = numbers[i]
-          }
-      }
-      return memory
-  } else {
-      return 0
-  }
 
-}
-
-const min = (numbers) => {
+exports.min = function min(array) {
   let memory = [];
-  if (numbers && numbers.length !== 0) {
-      for (let i = 0; i < numbers.length; i++) {
-          if (memory.length === 0) {
-              memory = numbers[i]
-          }
-          if (numbers[i] < memory) {
-              memory = numbers[i]
-          }
+  if (array && array.length !== 0) {
+    for (let i = 0; i < array.length; i++) {
+      if (memory.length === 0) {
+        memory = array[i]
       }
-      return memory
+      if (array[i] < memory) {
+        memory = array[i]
+      }
+    }
+    return memory
   } else {
-      return 0
+    return 0
   }
 }
 
-const avg = (numbers) => {
-  if (numbers && numbers.length !== 0) {
-      let sum = 0
-      let myAvg = 0
-      numbers.map((item) => {
-          sum = sum + item
-      })
-      myAvg = sum / numbers.length
-
-      return myAvg
+exports.max = function max(array) {
+  let memory = [];
+  if (array && array.length !== 0) {
+    for (let i = 0; i < array.length; i++) {
+      if (memory.length === 0) {
+        memory = array[i]
+      }
+      if (array[i] > memory) {
+        memory = array[i]
+      }
+    }
+    return memory
   } else {
-      return 0
+    return 0
+  }
+}
+
+exports.avg = function avg(array) {
+  if (array && array.length !== 0) {
+    let sum = 0
+    let myAvg = 0
+    array.map((item) => {
+      sum = sum + item
+    })
+    myAvg = sum / array.length
+
+    return myAvg
+  } else {
+    return 0
   }
 }
